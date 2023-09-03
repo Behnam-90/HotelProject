@@ -1,0 +1,43 @@
+﻿@using Hotel_Project.Models.Entities.Account;
+ @model List<User>
+<h1>Hi</h1>
+<div class="container">
+    <h2 class="py-3"> ایجاد بنر</h2>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    @foreach (var item in Model)
+    {
+        <div class="mb-3">
+            <label asp-for="@item.Name" class="form-label"></label>
+            <input asp-for="@item.Name" class="form-control">
+
+        </div>
+        <div class="mb-3">
+            <label asp-for="@item.LastName" class="form-label"></label>
+            <input asp-for="@item.LastName" class="form-control text-start">
+        </div>
+        <div class="mb-3">
+            <label asp-for="@item.Email" class="form-label"></label>
+            <input asp-for="@item.Email" class="form-control text-start">
+        </div>
+        <div class="mb-3">
+            <input class="form-check-input" >
+            <label class="form-check-label">
+        </div>
+        <div class="mb-3">
+            <button type="submit" class="btn btn-success"> ساخت  </button>
+        </div>
+
+    }
+</div>
+
+            <div>
+
+                   List<Claim>  claims = new List<Claim>
+     
+            {
+            new Claim(ClaimTypes.Sid, user.ID),
+            new Claim(ClaimTypes.Name, user.Name),
+            new Claim(ClaimTypes.Role, "basic")
+            };
+
+            </div>
