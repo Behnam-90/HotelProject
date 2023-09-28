@@ -1,3 +1,4 @@
+Hotel_Project/[Oo]bj/
 .vs/Arezoo
 *.vs/Arezoo
 .vs/
@@ -12,7 +13,6 @@ Hotel_Project/[Oo]bj/
 *[Bb]in/
 */Hotel_Project/[Oo]bj/
 [Bb]in/
-Hotel_Project/[Oo]bj/
 *.suo
 *.user
 *.vsidx
