@@ -1,11 +1,14 @@
 ﻿using Hotel_Project.Data;
+using Hotel_Project.Migrations;
 using Hotel_Project.Models.Entities.Account;
 using Hotel_Project.ViewModels.Account;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.Win32;
 using System.Security.Claims;
+using User = Hotel_Project.Models.Entities.Account.User;
 
 namespace Hotel_Project.Controllers
 {
@@ -25,12 +28,12 @@ namespace Hotel_Project.Controllers
             return View();
         }
 
-        [Route("register"), HttpPost,ValidateAntiForgeryToken]
+        [Route("register"), HttpPost, ValidateAntiForgeryToken]
         public IActionResult Register(RegisterViewModel register)
         {
             if (ModelState.IsValid)
             {
-                if(_context.users.Any(u=>u.Email == register.Email))
+                if (_context.users.Any(u => u.Email == register.Email))
                 {
                     ModelState.AddModelError("Email", "ایمیل شما تکراری میباشد");
                     return View(register);
@@ -60,15 +63,15 @@ namespace Hotel_Project.Controllers
             return View();
         }
 
-        [Route("/Login"),HttpPost , ValidateAntiForgeryToken]
+        [Route("/Login"), HttpPost, ValidateAntiForgeryToken]
         public IActionResult Login(LoginViewModel login)
         {
             if (ModelState.IsValid)
             {
                 var user = _context.users.SingleOrDefault(u => u.Email == login.Email);
-                if(user != null)
+                if (user != null)
                 {
-                    if(user.Password == login.Password)
+                    if (user.Password == login.Password)
                     {
                         var claims = new List<Claim>()
                         {
@@ -76,10 +79,10 @@ namespace Hotel_Project.Controllers
                             new Claim(ClaimTypes.Name,user.Email),
                             new Claim(ClaimTypes.NameIdentifier , user.Id.ToString()),
                             new Claim(ClaimTypes.Email, login.Email)
-                           
+
                         };
 
-                        var Identity = new ClaimsIdentity(claims , CookieAuthenticationDefaults.AuthenticationScheme);
+                        var Identity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
 
                         var Principal = new ClaimsPrincipal(Identity);
 
@@ -89,7 +92,7 @@ namespace Hotel_Project.Controllers
                         };
 
                         HttpContext.SignInAsync(Principal, Properties);
-                        return RedirectToAction("UserDashboard","Account");
+                        return RedirectToAction("UserDashboard", "Account");
 
 
                     }
@@ -120,11 +123,33 @@ namespace Hotel_Project.Controllers
         [Authorize]
         public IActionResult UserDashboard()
         {
-             {
+          
+            {
                 return View();
             }
-         
-         }
+
+        }
+
+        public IActionResult EditUser(UserDto profile )
+        {
+            if (ModelState.IsValid)
+            {
+                
+
+                    var Edituser = new User
+                    {
+                        Name = profile.Name,
+                        LastName = profile.LastName,
+                        Mobail = profile.Mobail
+                    };
+
+                    _context.Add(Edituser);
+                    _context.SaveChanges();
+                    return RedirectToAction("UserDashboard");
+              
+            }
+            return View();
+        }
 
 
         #endregion

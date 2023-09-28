@@ -1,0 +1,47 @@
+﻿
+@{
+    ViewData["Title"] = "EditUser";
+}
+
+<h1>پروفایل</h1>
+
+@using Hotel_Project.Models.Entities.Account;
+@model User
+   
+
+<main>
+    <div class="container">
+        <div class="row justify-content-center align-items-center page-section ">
+            <div class="col-lg-6 col-md-8 col-xl-6 login-box">
+                <div class="px-4">
+                    <h5>مشخصات</h5>
+                    <form asp-action="EditUser" method="post" class="pt-4 login-form">
+                        <div class="mb-3 form-group ">
+                            <label asp-for="Name" class="form-label"></label>
+                            <input asp-for="Name" class="form-control text-start" />
+                                 
+                            <span asp-validation-for="Name" class="text-danger"></span>
+                        </div>
+                        <div class="mb-4">
+                            <label asp-for="LastName" class="form-label"></label>
+
+                            <input asp-for="LastName" class="form-control text-start" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="mb-4">
+                            <label asp-for="Mobail" class="form-label"></label>
+
+                            <input asp-for="Mobail" class="form-control text-start"/>
+                            <span asp-validation-for="Mobail" class="text-danger"></span>
+                        </div>
+                        <div class="mt-4 d-grid gap-2 under-score position-relative">
+                            <button type="submit" class="btn btn-block btn-outline-danger">ذخیره</button>
+                        </div>
+                       
+                    </form>
+             
+                </div>
+            </div>
+        </div>
+    </div>
+</main>

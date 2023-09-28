@@ -15,5 +15,11 @@ namespace Hotel_Project.ViewModels.Account
         [Display(Name = "نام خانوادگی")]
         public string? LastName { get; set; }
 
+        [Display(Name ="موبایل")]
+        [Required(ErrorMessage = "لطفا {0} را کامل کنید")]
+        [MaxLength(11)]
+        
+        public string Mobail { get; set; }
+
     }
 }

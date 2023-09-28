@@ -7,8 +7,8 @@ namespace Hotel_Project.Models.Entities.Account
         [Key]
         public int Id { get; set; }
 
-        [Display(Name ="ایمیل")]
-        [Required(ErrorMessage ="لطفا {0} را کامل کنید")] 
+        [Display(Name = "ایمیل")]
+        [Required(ErrorMessage = "لطفا {0} را کامل کنید")]
         public string Email { get; set; }
         [Display(Name = "کلمه عبور")]
         [Required(ErrorMessage = "لطفا {0} را کامل کنید")]
@@ -19,5 +19,8 @@ namespace Hotel_Project.Models.Entities.Account
 
         [Display(Name = "نام خانوادگی")]
         public string? LastName { get; set; }
+
+        [Display(Name = "موبایل")]
+        public string Mobail { get; set; }
     }
 }
