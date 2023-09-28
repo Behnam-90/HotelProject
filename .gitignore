@@ -19,3 +19,4 @@ Hotel_Project/[Oo]bj/
 *.cache
 .suo
 .v2
+/Hotel_Project/obj/Debug/net6.0/Hotel_Project.assets.cache
