@@ -5,13 +5,13 @@
 /.vs/
 */.vs/
 [Bb]in/
-[Oo]bj/
+Hotel_Project/[Oo]bj/
 */[Bb]in/
-*/[Oo]bj/
+*/Hotel_Project/[Oo]bj/
 *[Bb]in/
-*[Oo]bj/
+*/Hotel_Project/[Oo]bj/
 [Bb]in/
-[Oo]bj/
+Hotel_Project/[Oo]bj/
 *.suo
 *.user
 *.vsidx
