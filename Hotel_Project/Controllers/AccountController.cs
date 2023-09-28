@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Session;
+using Microsoft.AspNetCore.Http;
 using Microsoft.Win32;
 using System.Security.Claims;
 using User = Hotel_Project.Models.Entities.Account.User;
@@ -15,9 +17,11 @@ namespace Hotel_Project.Controllers
     public class AccountController : Controller
     {
         MyContext _context;
+        
         public AccountController(MyContext context)
         {
             _context = context;
+            
         }
 
         #region Register
@@ -129,24 +133,40 @@ namespace Hotel_Project.Controllers
             }
 
         }
+        [Route("/EditUser")]
+
+        public IActionResult EditUser()
+        {
+            UserDto usr = new();
+            var user = _context.users.Where(e => e.Email == User.Identity.Name).FirstOrDefault();
+            usr.Email = user.Email;
+            usr.Name = user.Name;
+            usr.LastName = user.LastName;
+            usr.Mobail= user.Mobail;
+            usr.id= user.Id;
+            
+            return View(usr);
+        }
+        [Route("/EditUser"), HttpPost, ValidateAntiForgeryToken]
 
         public IActionResult EditUser(UserDto profile )
         {
             if (ModelState.IsValid)
             {
-                
+                var user = _context.users.Where(x => x.Id == profile.id).FirstOrDefault();
+                if(user is not null)
+                {
+                    user.Name = profile.Name;
+                    user.LastName = profile.LastName;
+                    user.Mobail= profile.Mobail;
+                    
+                }
 
-                    var Edituser = new User
-                    {
-                        Name = profile.Name,
-                        LastName = profile.LastName,
-                        Mobail = profile.Mobail
-                    };
+                _context.SaveChanges();                 
 
-                    _context.Add(Edituser);
-                    _context.SaveChanges();
-                    return RedirectToAction("UserDashboard");
+                    
               
+
             }
             return View();
         }

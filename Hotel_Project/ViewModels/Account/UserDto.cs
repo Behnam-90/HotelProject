@@ -4,8 +4,9 @@ namespace Hotel_Project.ViewModels.Account
 {
     public class UserDto
     {
+        public int id { get; set; }
+
         [Display(Name = "ایمیل")]
-        [Required(ErrorMessage = "لطفا {0} را کامل کنید")]
         public string Email { get; set; }
   
 
