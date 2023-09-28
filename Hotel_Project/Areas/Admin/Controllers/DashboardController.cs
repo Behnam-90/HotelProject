@@ -18,9 +18,9 @@ namespace Hotel_Project.Areas.Admin.Controllers
         {
             return View();
         }
-        public IActionResult Alluser()
+        public  IActionResult AllUser()
         {
-            return View(_context.users.ToListAsync());
+            return View(_context.users.ToList());
         }
 
         public IActionResult UserDashboard()
