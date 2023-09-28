@@ -21,6 +21,9 @@
         public bool  IsActive { get; set; }
 
 
+
+
+
         //Navigation
         public ICollection<HotelGallery> HotelGalleries { get; set; }
         public ICollection<HotelRoom> HotelRooms { get; }

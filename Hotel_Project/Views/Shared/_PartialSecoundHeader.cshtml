@@ -38,6 +38,12 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="UserDashboard">داشبورد</a></li>
                                         <li><a class="dropdown-item" href="#"> سفارشات </a></li>
+                                        @if (User.Identity.Name == "behnam.h.@gamail.com")
+                                        {
+                                            <li>
+                                                <a class="dropdown-item" asp-area="Admin" asp-controller="Dashboard" asp-action="AdminDashboard">ادمین </a>
+                                            </li>
+                                        }
                                         <li><a class="dropdown-item" asp-controller="Account" asp-action="logout"> خروج </a></li>
                                     </ul>
                                 </div>
@@ -48,12 +54,7 @@
                                 </div>
 
                             </div>
-                            @if (User.Identity.Name == "behnam.h.@gamail.com")
-                            {
-                                <li class="nav-item">
-                                    <a class="nav-link" asp-area="Admin" asp-controller="Dashboard" asp-action="AdminDashboard">ادمین </a>
-                                </li>
-                            }
+                       
 
                         }else
                         {

@@ -18,6 +18,9 @@ namespace Hotel_Project.Models.Product
 
 
 
+
+
+
         //// Navigation
 
         public int HotelId { get; set; }
