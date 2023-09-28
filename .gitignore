@@ -4,7 +4,7 @@
 *.vs/
 /.vs/
 */.vs/
-.vs/Hotel_Project/v17
+/.vs/Hotel_Project/v17/.suo
 [Bb]in/
 Hotel_Project/[Oo]bj/
 */[Bb]in/
