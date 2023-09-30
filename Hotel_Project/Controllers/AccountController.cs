@@ -161,6 +161,7 @@ namespace Hotel_Project.Controllers
 
                     user.Name = profile.Name;
                     user.LastName = profile.LastName;
+                   
                 }
 
                 _context.SaveChanges();

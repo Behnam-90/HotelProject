@@ -16,8 +16,7 @@ namespace Hotel_Project.ViewModels.Account
 
         [Display(Name = "نام خانوادگی")]
         public string? LastName { get; set; }
-
-      
+    
 
     }
 }
