@@ -19,8 +19,6 @@ namespace Hotel_Project.Models.Entities.Account
 
         [Display(Name = "نام خانوادگی")]
         public string? LastName { get; set; }
-
-        [Display(Name = "موبایل")]
-        public string Mobail { get; set; }
+ 
     }
 }

@@ -36,10 +36,6 @@ namespace Hotel_Project.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<string>("Mobail")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Name")
                         .HasColumnType("nvarchar(max)");
 
@@ -49,7 +45,7 @@ namespace Hotel_Project.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("users");
+                    b.ToTable("users", (string)null);
                 });
 
             modelBuilder.Entity("Hotel_Project.Models.Entities.Web.FisrtBaner", b =>
@@ -74,7 +70,7 @@ namespace Hotel_Project.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("fisrtBaners");
+                    b.ToTable("fisrtBaners", (string)null);
                 });
 #pragma warning restore 612, 618
         }

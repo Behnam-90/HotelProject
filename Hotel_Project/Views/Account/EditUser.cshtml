@@ -20,7 +20,7 @@
 
                         <div class="mb-3 form-group ">
                             <label asp-for="Email" class="form-label"></label>
-                            <input asp-for="Email" class="form-control text-start" />
+                            <input asp-for="Email" class="form-control" readonly text-start" />
 
                         </div>
 
@@ -36,12 +36,7 @@
                             <input asp-for="LastName" class="form-control text-start" />
                             <span asp-validation-for="LastName" class="text-danger"></span>
                         </div>
-                        <div class="mb-4">
-                            <label asp-for="Mobail" class="form-label"></label>
-
-                            <input asp-for="Mobail" class="form-control text-start"/>
-                            <span asp-validation-for="Mobail" class="text-danger"></span>
-                        </div>
+                   
                         <div class="mt-4 d-grid gap-2 under-score position-relative">
                             <button type="submit" class="btn btn-block btn-outline-danger">ذخیره</button>
                         </div>
