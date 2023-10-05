@@ -9,93 +9,93 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Hotel_Project
 build_property.RootNamespace = Hotel_Project
-build_property.ProjectDir = C:\Users\user\Source\Repos\Behnam-90\HotelProject1\Hotel_Project\
+build_property.ProjectDir = C:\Users\user\Source\Repos\Behnam-90\HotelProject\Hotel_Project\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\user\Source\Repos\Behnam-90\HotelProject1\Hotel_Project
+build_property.MSBuildProjectDirectory = C:\Users\user\Source\Repos\Behnam-90\HotelProject\Hotel_Project
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Areas/Admin/Views/Dashboard/AdminDashboard.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/Dashboard/AdminDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEFkbWluRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Areas/Admin/Views/Dashboard/AllUser.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/Dashboard/AllUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcRGFzaGJvYXJkXEFsbFVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Areas/Admin/Views/MiniBaner/CreateBaner.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/MiniBaner/CreateBaner.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWluaUJhbmVyXENyZWF0ZUJhbmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Areas/Admin/Views/MiniBaner/EditBaner.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/MiniBaner/EditBaner.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWluaUJhbmVyXEVkaXRCYW5lci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Areas/Admin/Views/MiniBaner/MiniBaners.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/MiniBaner/MiniBaners.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWluaUJhbmVyXE1pbmlCYW5lcnMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Areas/Admin/Views/MiniBaner/RemoveBaner.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/MiniBaner/RemoveBaner.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcTWluaUJhbmVyXFJlbW92ZUJhbmVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/Shared/_AdminLayout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9BZG1pbkxheW91dC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Areas/Admin/Views/Shared/_PartialAdminHeader.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/Shared/_PartialAdminHeader.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcU2hhcmVkXF9QYXJ0aWFsQWRtaW5IZWFkZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Areas/Admin/Views/_ViewImports.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Areas/Admin/Views/_ViewStart.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/Account/EditUser.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/Account/EditUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0VXNlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/Account/login.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/Account/login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxsb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/Account/Register.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/Account/UserDashboard.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/Account/UserDashboard.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxVc2VyRGFzaGJvYXJkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/Home/Index.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/Shared/_Layout.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/Shared/_PartialFooter.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/Shared/_PartialFooter.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsRm9vdGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/Shared/_PartialHeader.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/Shared/_PartialHeader.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsSGVhZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/Shared/_PartialSecoundHeader.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/Shared/_PartialSecoundHeader.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9QYXJ0aWFsU2Vjb3VuZEhlYWRlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/_ViewImports.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/user/source/repos/Behnam-90/HotelProject1/Hotel_Project/Views/_ViewStart.cshtml]
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 

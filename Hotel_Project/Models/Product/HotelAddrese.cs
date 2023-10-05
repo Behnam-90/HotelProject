@@ -31,7 +31,7 @@ namespace Hotel_Project.Models.Product
         [Key]
         public int HotelId { get; set; }
         [ForeignKey(nameof(HotelId))]
-        public int MyProperty { get; set; }
+        public Hotel hotel { get; set; }
 
     }
 
