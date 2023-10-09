@@ -1,4 +1,5 @@
 using Hotel_Project.Data;
+using Hotel_Project.Service;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.EntityFrameworkCore;
@@ -6,6 +7,8 @@ using Microsoft.EntityFrameworkCore;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddScoped<IHotelService , HotelService>();
 
 builder.Services.AddDbContext<MyContext>(options =>
 {
