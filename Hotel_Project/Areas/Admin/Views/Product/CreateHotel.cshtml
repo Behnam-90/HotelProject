@@ -40,6 +40,13 @@
                 <span asp-validation-for="ExitTime" class="text-danger"></span>
             </div>
             <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <input asp-for="Description" class="form-control text-start" placeholder="مثال : توضیحات">
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <h2 class="py-3"> آدرس  هتل</h2>
+
+            <div class="mb-3">
                 <label asp-for="Address" class="form-label"></label>
                 <input asp-for="Address" class="form-control text-start" placeholder="مثال : خرید کنید">
                 <span asp-validation-for="Address" class="text-danger"></span>
