@@ -77,10 +77,15 @@ namespace Hotel_Project.Areas.Admin.Controllers
             return View(hotelDto);
         }
 
-        public IActionResult EditHotel()
+        public IActionResult EditHotel(int Id)
 
         {
-            return View();
+            if (Id== null)
+            {
+                return RedirectToAction("GetAllHotel");
+            }
+
+            return View(_service.GetEditHotelDto(Id));
         }
 
     }
