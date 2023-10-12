@@ -30,23 +30,23 @@ namespace Hotel_Project.Areas.Admin.Controllers
         }
 
 
-        [HttpPost,ValidateAntiForgeryToken]
+        [HttpPost, ValidateAntiForgeryToken]
         public IActionResult CreateHotel(CreateHotelDto hotelDto)
         {
-            if(ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 try
                 {
                     var hotel = new Hotel()
                     {
                         Titel = hotelDto.Titel,
-                        TimeCreate= DateTime.Now,
+                        TimeCreate = DateTime.Now,
                         EntriTime = hotelDto.EntriTime,
                         ExitTime = hotelDto.ExitTime,
-                        Description = hotelDto.Description, 
-                        IsActive  =true,
+                        Description = hotelDto.Description,
+                        IsActive = true,
                         RommeCount = hotelDto.RommeCount,
-                        StageCount = hotelDto.StageCount,   
+                        StageCount = hotelDto.StageCount,
 
                     };
 
@@ -80,7 +80,7 @@ namespace Hotel_Project.Areas.Admin.Controllers
         public IActionResult EditHotel(int Id)
 
         {
-            if (Id== null)
+            if (Id == null)
             {
                 return RedirectToAction("GetAllHotel");
             }
@@ -88,5 +88,42 @@ namespace Hotel_Project.Areas.Admin.Controllers
             return View(_service.GetEditHotelDto(Id));
         }
 
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult EditHotel(int Id, EditHotelDto editHotelDto)
+
+        {
+            if (ModelState.IsValid)
+            {
+                if (Id == editHotelDto.Id)
+                {
+                    var hotel = _service.GetHotelById(Id);
+                    hotel.Titel = editHotelDto.Titel;
+                    hotel.Description = editHotelDto.Description;
+                    hotel.ExitTime = editHotelDto.ExitTime;
+                    hotel.EntriTime = editHotelDto.EntriTime;
+                    hotel.IsActive = editHotelDto.IsActive;
+                    hotel.RommeCount = editHotelDto.RommeCount;
+                    hotel.StageCount = editHotelDto.StageCount;
+
+                    var addres = hotel.HotelAddrese;
+                        addres.Address = editHotelDto.Address;
+                        addres.City = editHotelDto.City;
+                        addres.State= editHotelDto.State;
+                        addres.PostalCode = editHotelDto.PostalCode;
+
+                    _service.EditHotel(hotel);
+                    _service.EditAddres(addres);
+                    _service.SaveChange();
+                    return RedirectToAction("GetAllHotel");
+
+                }
+                return View(editHotelDto);
+
+            }
+
+            return View(editHotelDto);
+        }
     }
+
 }
