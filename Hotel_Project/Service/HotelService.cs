@@ -2,6 +2,7 @@
 using Hotel_Project.Models.Product;
 using Hotel_Project.ViewModels.Product.Hotel;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace Hotel_Project.Service
 {
@@ -10,7 +11,7 @@ namespace Hotel_Project.Service
         private MyContext _context;
         public HotelService(MyContext context)
         {
-            _context = context; 
+            _context = context;
         }
 
         public void EditAddres(HotelAddrese hotelAddrese)
@@ -32,28 +33,28 @@ namespace Hotel_Project.Service
         {
             return _context.hotels.Include(a => a.HotelAddrese).Where(h => h.Id == Id).Select(eh => new EditHotelDto
             {
-                Id=eh.Id,
-                Titel=eh.Titel,
-                Description=eh.Description,
-                EntriTime=eh.EntriTime,
-                ExitTime=eh.ExitTime,
-                IsActive=eh.IsActive,
-                RommeCount=eh.RommeCount,
-                StageCount=eh.StageCount,
-                Address=eh.HotelAddrese.Address,
-                City=eh.HotelAddrese.City,
-                State=eh.HotelAddrese.State,
-                PostalCode=eh.HotelAddrese.PostalCode,
+                Id = eh.Id,
+                Titel = eh.Titel,
+                Description = eh.Description,
+                EntriTime = eh.EntriTime,
+                ExitTime = eh.ExitTime,
+                IsActive = eh.IsActive,
+                RommeCount = eh.RommeCount,
+                StageCount = eh.StageCount,
+                Address = eh.HotelAddrese.Address,
+                City = eh.HotelAddrese.City,
+                State = eh.HotelAddrese.State,
+                PostalCode = eh.HotelAddrese.PostalCode,
 
 
             }).SingleOrDefault();
         }
         public Hotel GetHotelById(int id)
         {
-            return _context.hotels.Include(a=> a.HotelAddrese).SingleOrDefault(h=> h.Id == id) ?? throw new Exception();
+            return _context.hotels.Include(a => a.HotelAddrese).SingleOrDefault(h => h.Id == id) ?? throw new Exception();
         }
 
-         
+
         public void InsertAddres(HotelAddrese hotelAddrese)
         {
             _context.hotelAddreses.Add(hotelAddrese);
@@ -63,6 +64,20 @@ namespace Hotel_Project.Service
         {
             _context.hotels.Add(hotel);
         }
+
+        public void RemoveAddres(HotelAddrese addres)
+        {
+            _context.hotelAddreses.Remove(addres);
+
+         }
+
+  
+
+        public void RemoveHotel(Hotel hotel)
+        {
+            _context?.hotels.Remove(hotel);
+        }
+
 
         public void SaveChange()
         {

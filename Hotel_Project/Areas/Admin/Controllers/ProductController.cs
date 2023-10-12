@@ -107,10 +107,10 @@ namespace Hotel_Project.Areas.Admin.Controllers
                     hotel.StageCount = editHotelDto.StageCount;
 
                     var addres = hotel.HotelAddrese;
-                        addres.Address = editHotelDto.Address;
-                        addres.City = editHotelDto.City;
-                        addres.State= editHotelDto.State;
-                        addres.PostalCode = editHotelDto.PostalCode;
+                    addres.Address = editHotelDto.Address;
+                    addres.City = editHotelDto.City;
+                    addres.State = editHotelDto.State;
+                    addres.PostalCode = editHotelDto.PostalCode;
 
                     _service.EditHotel(hotel);
                     _service.EditAddres(addres);
@@ -124,6 +124,37 @@ namespace Hotel_Project.Areas.Admin.Controllers
 
             return View(editHotelDto);
         }
+
+
+        public IActionResult RemoveHotel(int Id)
+        {
+            if (Id == null)
+            {
+                return RedirectToAction("GetAllHotel");
+            }
+
+            return View(_service.GetEditHotelDto(Id));
+        }
+
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult RemoveHotel(int? Id)
+        {
+            if (Id != null)
+            {
+                var hotel = _service.GetHotelById(Id.Value);
+                if (hotel != null)
+                {
+                    _service.RemoveHotel(hotel);
+                    _service.RemoveAddres(hotel.HotelAddrese);
+                    _service.SaveChange();
+                    return RedirectToAction("GetAllHotel");
+                }
+                return RedirectToAction("GetAllHotel");
+            }
+            return RedirectToAction("GetAllHotel");
+        }
+
     }
 
 }

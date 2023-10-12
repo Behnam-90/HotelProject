@@ -18,6 +18,10 @@ namespace Hotel_Project.Service
 
         public EditHotelDto GetEditHotelDto(int Id);
 
+        public void RemoveHotel(Hotel hotel);
+
+        public void RemoveAddres(HotelAddrese addres);
+
         #endregion
 
 

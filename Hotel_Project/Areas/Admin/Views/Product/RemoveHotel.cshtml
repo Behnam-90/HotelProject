@@ -1,0 +1,83 @@
+﻿
+@{
+    ViewData["Title"] = "RemoveHotel";
+}
+
+@using Hotel_Project.ViewModels.Product.Hotel;
+@model EditHotelDto
+
+
+<h1>EditHotel</h1>
+
+
+<div class="container">
+    <h2 class="py-3"> حدف هتل</h2>
+    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+    <form asp-action="RemoveHotel" method="post">
+        <input asp-for="Id" type="hidden" />
+        <div class="col-12 w-50">
+            <div class="mb-3">
+                <label asp-for="Titel" class="form-label"></label>
+                <input asp-for="Titel" class="form-control">
+                <span asp-validation-for="Titel" class="text-danger"></span>
+
+            </div>
+            <div class="mb-3">
+                <label asp-for="RommeCount" class="form-label"></label>
+                <input asp-for="RommeCount" class="form-control text-start" placeholder="مثال : تخفیف بگیرید">
+                <span asp-validation-for="RommeCount" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="StageCount" class="form-label"></label>
+                <input asp-for="StageCount" class="form-control text-start" placeholder="مثال : خرید کنید">
+                <span asp-validation-for="StageCount" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="EntriTime" class="form-label"></label>
+                <input asp-for="EntriTime" class="form-control text-start" placeholder="مثال : خرید کنید">
+                <span asp-validation-for="EntriTime" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="ExitTime" class="form-label"></label>
+                <input asp-for="ExitTime" class="form-control text-start" placeholder="مثال : خرید کنید">
+                <span asp-validation-for="ExitTime" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="Description" class="form-label"></label>
+                <input asp-for="Description" class="form-control text-start" placeholder="مثال : توضیحات">
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+           
+            <h2 class="py-3"> آدرس  هتل</h2>
+
+            <div class="mb-3">
+                <label asp-for="Address" class="form-label"></label>
+                <input asp-for="Address" class="form-control text-start" placeholder="مثال : خرید کنید">
+                <span asp-validation-for="Address" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="State" class="form-label"></label>
+                <input asp-for="State" class="form-control text-start" placeholder="مثال : خرید کنید">
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="City" class="form-label"></label>
+                <input asp-for="City" class="form-control text-start" placeholder="مثال : خرید کنید">
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <label asp-for="PostalCode" class="form-label"></label>
+                <input asp-for="PostalCode" class="form-control text-start" placeholder="مثال : خرید کنید">
+                <span asp-validation-for="PostalCode" class="text-danger"></span>
+            </div>
+
+            <div class="mb-3">
+                <button type="submit" class="btn btn-danger"> حذف هتل </button>
+            </div>
+        </div>
+    </form>
+
+</div>
+
+
