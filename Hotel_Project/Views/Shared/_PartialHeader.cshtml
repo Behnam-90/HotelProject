@@ -15,11 +15,11 @@
                 <div class="collapse navbar-collapse" id="collapsibleNavId">
                     <ul class="navbar-nav mx-auto mt-lg-0 fs-8">
                         <li class="nav-item">
-                            <a class="nav-link" href="index.html">خانه</a>
+                            <a class="nav-link" asp-controller="Home" asp-action="Index">خانه </a>
                         </li>
 
                         <li class="nav-item">
-                            <a class="nav-link" asp-controller="Home" asp-action="Index">هتل ها</a>
+                            <a class="nav-link" href="#"> هتل ها</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">تور مسافرتی</a>
@@ -47,7 +47,7 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="dropdown-item" asp-area="" asp-controller="Account" asp-action="UserDashboard">داشبورد</a></li>
                                         <li><a class="dropdown-item" href="#"> سفارشات </a></li>
-                                        @if (User.Identity.Name == "behnam.h.@gamail.com")
+                                        @if (User.Identity.Name == "Admin.Admin@gmail.com")
                                         {
                                             <li>
                                                 <a class="dropdown-item" asp-area="Admin" asp-controller="Dashboard" asp-action="AdminDashboard">ادمین </a>
