@@ -13,7 +13,7 @@ namespace Hotel_Project.Service
         {
             _context = context;
         }
-
+        #region BaseHotel
         public void EditAddres(HotelAddrese hotelAddrese)
         {
             _context.hotelAddreses.Update(hotelAddrese);
@@ -54,7 +54,7 @@ namespace Hotel_Project.Service
             return _context.hotels.Include(a => a.HotelAddrese).SingleOrDefault(h => h.Id == id) ?? throw new Exception();
         }
 
-
+   
         public void InsertAddres(HotelAddrese hotelAddrese)
         {
             _context.hotelAddreses.Add(hotelAddrese);
@@ -77,7 +77,15 @@ namespace Hotel_Project.Service
         {
             _context?.hotels.Remove(hotel);
         }
+        #endregion
 
+        #region HotelImage
+        public IEnumerable<HotelGallery> hotelGalleries(int Id)
+        {
+           return _context.hotelGallerys.Where(a=>a.HotelId == Id).ToList();
+        }
+
+        #endregion
 
         public void SaveChange()
         {

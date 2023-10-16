@@ -23,6 +23,11 @@ namespace Hotel_Project.Service
         public void RemoveAddres(HotelAddrese addres);
 
         #endregion
+        #region Image
+
+        public IEnumerable<HotelGallery> hotelGalleries(int Id);
+
+        #endregion
 
 
 

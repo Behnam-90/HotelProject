@@ -1,6 +1,7 @@
 ﻿using Hotel_Project.Models.Product;
 using Hotel_Project.Service;
 using Hotel_Project.ViewModels.Product.Hotel;
+using Hotel_Project.ViewModels.Product.HotelImage;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
@@ -10,7 +11,7 @@ namespace Hotel_Project.Areas.Admin.Controllers
     [Authorize]
     public class ProductController : Controller
     {
-
+        #region Hotelbase
 
         private IHotelService _service;
         public ProductController(IHotelService service)
@@ -154,7 +155,22 @@ namespace Hotel_Project.Areas.Admin.Controllers
             }
             return RedirectToAction("GetAllHotel");
         }
+        #endregion
 
+        #region Image
+        public IActionResult ShowAllHotelImage(int Id)
+        {
+            return View(new HotelImageDto() { Id= Id , hotelGalleries =_service.hotelGalleries(Id)});
+        }
+
+
+         public IActionResult InsertHotelImage(int Id)
+
+        {
+            return View(new InsertAndRemoveImage { Id=Id});
+        }
+
+        #endregion
     }
 
 }
