@@ -4,6 +4,7 @@ using Hotel_Project.ViewModels.Product.Hotel;
 using Hotel_Project.ViewModels.Product.HotelImage;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
+using System.Drawing.Drawing2D;
 
 namespace Hotel_Project.Areas.Admin.Controllers
 {
@@ -160,16 +161,80 @@ namespace Hotel_Project.Areas.Admin.Controllers
         #region Image
         public IActionResult ShowAllHotelImage(int Id)
         {
-            return View(new HotelImageDto() { Id= Id , hotelGalleries =_service.hotelGalleries(Id)});
+            return View(new HotelImageDto() { Id = Id, hotelGalleries = _service.hotelGalleries(Id) });
         }
 
 
-         public IActionResult InsertHotelImage(int Id)
+        public IActionResult InsertHotelImage(int Id)
 
         {
-            return View(new InsertAndRemoveImage { Id=Id});
+            return View(new InsertAndRemoveImage { Id = Id });
         }
 
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult InsertHotelImage(InsertAndRemoveImage gallery)
+
+        {
+            if (ModelState.IsValid)
+            {
+                if (gallery.File != null)
+                {
+                    string ImageName = Guid.NewGuid().ToString().Replace("-", "") + Path.GetExtension(gallery.File.FileName);
+                    string ImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/asset/img/HotelImages", ImageName);
+
+                    using (var strem = new FileStream(ImagePath, FileMode.Create))
+                    {
+                        gallery.File.CopyTo(strem);
+                    }
+                    var image = new HotelGallery()
+                    {
+                        ImageName = ImageName,
+                        HotelId = gallery.Id,
+
+                    };
+                    _service.AddHotelIamge(image);
+                    _service.SaveChange();
+                    return RedirectToAction("ShowAllHotelImage", new { id = gallery.Id });
+                }
+                return View();
+            }
+            return View();
+
+        }
+        public IActionResult RemoveHotelImage(int Id)
+        {
+            return View(new InsertAndRemoveImage()
+            { Id = Id, ImageName = _service.HotelGalleryId(Id).ImageName });
+        }
+
+        public IActionResult RemoveFormHotelImage(int? Id)
+        {
+            if (Id != null)
+            {
+                var image = _service.HotelGalleryId(Id.Value);
+                if (image != null)
+                {
+                    if (_service.RemoveImage(image.ImageName))
+                    {
+                        _service.RemoveHotelGallery(image);
+                        _service.SaveChange();
+                        return RedirectToAction("ShowAllHotelImage", new { Id = image.HotelId });
+                    }
+                    else
+                    {
+                        return View(new HotelImageDto() { Id = Id.Value, hotelGalleries = _service.hotelGalleries(Id.Value) });
+                    }
+
+                }
+                else
+                {
+                    return View("GetAllHotel");
+                }
+
+            }
+            return View("GetAllHotel");
+
+        }
         #endregion
     }
 

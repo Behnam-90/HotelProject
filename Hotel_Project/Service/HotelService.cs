@@ -1,6 +1,8 @@
 ﻿using Hotel_Project.Data;
 using Hotel_Project.Models.Product;
 using Hotel_Project.ViewModels.Product.Hotel;
+using Hotel_Project.ViewModels.Product.HotelImage;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
@@ -9,6 +11,8 @@ namespace Hotel_Project.Service
     public class HotelService : IHotelService
     {
         private MyContext _context;
+
+
         public HotelService(MyContext context)
         {
             _context = context;
@@ -84,12 +88,41 @@ namespace Hotel_Project.Service
         {
            return _context.hotelGallerys.Where(a=>a.HotelId == Id).ToList();
         }
+        public void AddHotelIamge(HotelGallery hotelGallery)
+        {
+            _context.hotelGallerys.Add(hotelGallery);
+        }
 
+        public HotelGallery HotelGalleryId(int Id)
+        {
+            return _context.hotelGallerys.Find(Id)?? throw new Exception();
+        }
+
+        public void RemoveHotelGallery(HotelGallery Gallery)
+        {
+            _context.hotelGallerys.Remove(Gallery);
+        }
+        public bool RemoveImage(string ImageName)
+        {
+            try
+            {
+                string ImagePath = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/asset/img/HotelImages", ImageName);
+                File.Delete(ImagePath);
+                return true;
+            }
+            catch 
+            {
+
+               return false;
+            }
+        }
         #endregion
 
         public void SaveChange()
         {
             _context.SaveChanges();
         }
+
+    
     }
 }

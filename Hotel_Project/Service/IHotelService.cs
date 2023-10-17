@@ -27,6 +27,14 @@ namespace Hotel_Project.Service
 
         public IEnumerable<HotelGallery> hotelGalleries(int Id);
 
+        public void AddHotelIamge(HotelGallery hotelGallery);
+
+        public HotelGallery HotelGalleryId(int Id);
+
+        public void RemoveHotelGallery(HotelGallery hotelGallery);
+        public bool RemoveImage(string ImageName);
+
+
         #endregion
 
 

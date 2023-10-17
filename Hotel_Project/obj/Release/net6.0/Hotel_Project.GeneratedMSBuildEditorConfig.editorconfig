@@ -60,6 +60,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxSZW1vdmVIb3RlbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/Product/RemoveHotelImage.cshtml]
+build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxSZW1vdmVIb3RlbEltYWdlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/user/source/repos/Behnam-90/HotelProject/Hotel_Project/Areas/Admin/Views/Product/ShowAllHotelImage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcQWRtaW5cVmlld3NcUHJvZHVjdFxTaG93QWxsSG90ZWxJbWFnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
