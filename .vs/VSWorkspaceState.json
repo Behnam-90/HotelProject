@@ -4,8 +4,13 @@
     "\\Hotel_Project",
     "\\Hotel_Project\\Areas",
     "\\Hotel_Project\\Areas\\Admin",
-    "\\Hotel_Project\\Areas\\Admin\\Controllers"
+    "\\Hotel_Project\\Areas\\Admin\\Controllers",
+    "\\Hotel_Project\\Areas\\Admin\\Views",
+    "\\Hotel_Project\\Areas\\Admin\\Views\\Product",
+    "\\Hotel_Project\\Service",
+    "\\Hotel_Project\\Views",
+    "\\Hotel_Project\\Views\\Shared"
   ],
-  "SelectedNode": "\\Hotel_Project.sln",
+  "SelectedNode": "\\Hotel_Project\\Views\\Shared\\_PartialHeader.cshtml",
   "PreviewInSolutionExplorer": false
 }

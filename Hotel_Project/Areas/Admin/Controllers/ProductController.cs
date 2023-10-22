@@ -236,6 +236,15 @@ namespace Hotel_Project.Areas.Admin.Controllers
 
         }
         #endregion
+
+        #region Rule
+        public IActionResult ShowAllRule(int Id)
+        {
+
+            return View(_service.GetAllRules(Id));
+        }
+ 
+        #endregion
     }
 
 }

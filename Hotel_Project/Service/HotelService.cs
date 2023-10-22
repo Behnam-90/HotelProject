@@ -5,6 +5,7 @@ using Hotel_Project.ViewModels.Product.HotelImage;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Data;
 
 namespace Hotel_Project.Service
 {
@@ -116,6 +117,17 @@ namespace Hotel_Project.Service
                return false;
             }
         }
+        #endregion
+
+
+        #region Rule
+        public IEnumerable<HotelRule> GetAllRules(int Id)
+        {
+           return _context.hotelRules.Where(e=> e.HotelId==Id).ToList();
+        }
+
+
+
         #endregion
 
         public void SaveChange()
