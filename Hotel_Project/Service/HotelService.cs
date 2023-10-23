@@ -2,6 +2,7 @@
 using Hotel_Project.Models.Product;
 using Hotel_Project.ViewModels.Product.Hotel;
 using Hotel_Project.ViewModels.Product.HotelImage;
+using Hotel_Project.ViewModels.Product.HotelRule;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -138,6 +139,28 @@ namespace Hotel_Project.Service
             _context.SaveChanges();
         }
 
-  
+        public HotelRuleDto GetRuleDto(int Id)
+        {
+            var rule = FindHotelRule(Id);
+            return new HotelRuleDto()
+            {
+                Id=rule.Id,
+                Description = rule.Description,
+            };
+        }
+        public HotelRule FindHotelRule(int Id)
+        {
+            return _context.hotelRules.Find(Id) ?? throw new Exception();
+        }
+
+        public void UpdateHotelRule(HotelRule hotelrule)
+        {
+             _context.hotelRules.Update(hotelrule);
+        }
+
+        public void DeleteRule(HotelRule rule)
+        {
+            _context.hotelRules.Remove(rule);
+        }
     }
 }

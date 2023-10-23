@@ -1,0 +1,30 @@
+﻿@using Hotel_Project.ViewModels.Product.HotelRule;
+@model HotelRuleDto
+
+@{
+    ViewData["Title"] = "RemovetRule";
+}
+
+<h1>RemovetRule</h1>
+
+
+
+
+
+<div class="container">
+    <h3 class="p-3">ویرایش قوانین  </h3>
+    <form asp-action="RemovetRule" method="post">
+        <input asp-for="Id" type="hidden" />
+        <div class="row">
+            <div class="mb-3 col-6">
+                <label asp-for="Description" class="form-label"></label>
+                <textarea  readonly="readonly" rows="4" asp-for="Description" class="form-control"></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
+            </div>
+            <div class="mb-3">
+                <button type="submit" class="btn btn-danger ">حذف قانون</button>
+            </div>
+        </div>
+
+    </form>
+</div>

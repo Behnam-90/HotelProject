@@ -1,5 +1,6 @@
 ﻿using Hotel_Project.Models.Product;
 using Hotel_Project.ViewModels.Product.Hotel;
+using Hotel_Project.ViewModels.Product.HotelRule;
 using System.Data;
 
 namespace Hotel_Project.Service
@@ -42,6 +43,11 @@ namespace Hotel_Project.Service
 
         public IEnumerable<HotelRule> GetAllRules(int Id);
         public void InsertRule(HotelRule hotelrule);
+        public HotelRuleDto GetRuleDto(int Id);
+        public HotelRule FindHotelRule(int Id);
+        public void UpdateHotelRule(HotelRule hotelrule);
+
+        public void DeleteRule(HotelRule rule);
 
         #endregion
 

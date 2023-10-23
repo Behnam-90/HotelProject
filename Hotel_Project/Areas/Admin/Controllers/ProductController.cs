@@ -257,11 +257,52 @@ namespace Hotel_Project.Areas.Admin.Controllers
             {
                 _service.InsertRule(new HotelRule { HotelId = ruleDto.Id, Description = ruleDto.Description });
                 _service.SaveChange();
-                return RedirectToAction("ShowAllRule", new { id = ruleDto });
+                return RedirectToAction("ShowAllRule", new { id = ruleDto.Id });
 
             }
             ViewBag.HotelId = ruleDto.Id;
             return View(ruleDto);
+        }
+
+        public IActionResult EditRule(int Id)
+        {
+            return View(_service.GetRuleDto(Id));
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult EditRule(HotelRuleDto ruleDto)
+        {
+            var rule = _service.FindHotelRule(ruleDto.Id);
+           if(ModelState.IsValid)
+            {
+                rule.Description = ruleDto.Description;
+                _service.UpdateHotelRule(rule);
+                _service.SaveChange();
+                return RedirectToAction("ShowAllRule", new { id = rule.HotelId });
+
+            }
+            return View();
+
+        }
+
+        public IActionResult RemovetRule(int Id)
+        {
+            return View(_service.GetRuleDto(Id));
+        }
+
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult RemovetRule(HotelRuleDto ruleDto)
+        {
+            var rule = _service.FindHotelRule(ruleDto.Id);
+            if (ModelState.IsValid)
+            {
+                _service.DeleteRule(rule);
+                _service.SaveChange();
+                return RedirectToAction("ShowAllRule", new { id = rule.HotelId });
+
+            }
+            return View();
+
         }
 
 
