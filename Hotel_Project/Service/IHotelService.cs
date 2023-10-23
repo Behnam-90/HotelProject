@@ -41,6 +41,7 @@ namespace Hotel_Project.Service
         #region Rule
 
         public IEnumerable<HotelRule> GetAllRules(int Id);
+        public void InsertRule(HotelRule hotelrule);
 
         #endregion
 

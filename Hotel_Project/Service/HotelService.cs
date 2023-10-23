@@ -126,7 +126,10 @@ namespace Hotel_Project.Service
            return _context.hotelRules.Where(e=> e.HotelId==Id).ToList();
         }
 
-
+        public void InsertRule(HotelRule hotelrule)
+        {
+           _context.hotelRules.Add(hotelrule);
+        }
 
         #endregion
 
@@ -135,6 +138,6 @@ namespace Hotel_Project.Service
             _context.SaveChanges();
         }
 
-    
+  
     }
 }

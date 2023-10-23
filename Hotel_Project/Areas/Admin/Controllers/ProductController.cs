@@ -2,6 +2,7 @@
 using Hotel_Project.Service;
 using Hotel_Project.ViewModels.Product.Hotel;
 using Hotel_Project.ViewModels.Product.HotelImage;
+using Hotel_Project.ViewModels.Product.HotelRule;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Drawing.Drawing2D;
@@ -240,10 +241,30 @@ namespace Hotel_Project.Areas.Admin.Controllers
         #region Rule
         public IActionResult ShowAllRule(int Id)
         {
-
+            ViewBag.HotelId = Id;
             return View(_service.GetAllRules(Id));
         }
- 
+
+        public IActionResult InsertHotelRule(int Id)
+        {
+            ViewBag.HotelId = Id;
+            return View();
+        }
+        [HttpPost, ValidateAntiForgeryToken]
+        public IActionResult InsertHotelRule(HotelRuleDto ruleDto)
+        {
+            if (ModelState.IsValid)
+            {
+                _service.InsertRule(new HotelRule { HotelId = ruleDto.Id, Description = ruleDto.Description });
+                _service.SaveChange();
+                return RedirectToAction("ShowAllRule", new { id = ruleDto });
+
+            }
+            ViewBag.HotelId = ruleDto.Id;
+            return View(ruleDto);
+        }
+
+
         #endregion
     }
 

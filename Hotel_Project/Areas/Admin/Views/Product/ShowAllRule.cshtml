@@ -1,16 +1,17 @@
 ﻿@model IEnumerable<HotelRule>
 @{
     ViewData["Title"] = "ShowAllRule";
+    int Id = ViewBag.HotelId;
 }
 
-
+ 
 
 
 <div class="container">
     <h2 class="py-3">لیست قوانین </h2>
     <div class="row">
         <div class="col-12 pb-3">
-            <a asp-action="" class="btn btn-outline-primary">ثیت قوانین </a>
+            <a asp-action="InsertHotelRule" asp-route-Id="@Id" class="btn btn-outline-primary">ثیت قوانین </a>
         </div>
         @if (Model.Any())
         {
