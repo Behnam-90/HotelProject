@@ -5,9 +5,9 @@ namespace Hotel_Project.Models.Product
 {
     public class HotelRule
     {
-         [Key]
-        public int Id { get; set; } 
-                [Display(Name ="توضیحات  ")]
+        [Key]
+        public int Id { get; set; }
+        [Display(Name = "توضیحات  ")]
         [Required(ErrorMessage = "لطفا {0} را وارد کنید ")]
 
         public string Description { get; set; }

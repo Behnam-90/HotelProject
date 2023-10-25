@@ -307,6 +307,13 @@ namespace Hotel_Project.Areas.Admin.Controllers
 
 
         #endregion
+
+        #region Rooms
+        public IActionResult ShowAllRooms()
+        {
+            return View();
+        }
+        #endregion
     }
 
 }
